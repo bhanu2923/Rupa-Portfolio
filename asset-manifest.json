@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/Rupa-Portfolio/static/css/main.4f796bd3.css",
-    "main.js": "/Rupa-Portfolio/static/js/main.75627556.js",
+    "main.css": "/Rupa-Portfolio/static/css/main.3c2f5c5d.css",
+    "main.js": "/Rupa-Portfolio/static/js/main.37908938.js",
     "static/media/machine.png": "/Rupa-Portfolio/static/media/machine.493bce2be2c7f62061b6.png",
     "static/media/event.png": "/Rupa-Portfolio/static/media/event.be98738e1b746b8888d7.png",
     "static/media/slim.png": "/Rupa-Portfolio/static/media/slim.f09ecae994f8d39e8d85.png",
     "static/media/lumiere.png": "/Rupa-Portfolio/static/media/lumiere.4603bd2abe7b62482fb5.png",
+    "static/media/Rupa_resume.pdf": "/Rupa-Portfolio/static/media/Rupa_resume.dd5185812db8b112afd0.pdf",
     "static/media/rupa.jpeg": "/Rupa-Portfolio/static/media/rupa.17750815fd8c0cb2943f.jpeg",
     "index.html": "/Rupa-Portfolio/index.html",
-    "main.4f796bd3.css.map": "/Rupa-Portfolio/static/css/main.4f796bd3.css.map",
-    "main.75627556.js.map": "/Rupa-Portfolio/static/js/main.75627556.js.map"
+    "main.3c2f5c5d.css.map": "/Rupa-Portfolio/static/css/main.3c2f5c5d.css.map",
+    "main.37908938.js.map": "/Rupa-Portfolio/static/js/main.37908938.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f796bd3.css",
-    "static/js/main.75627556.js"
+    "static/css/main.3c2f5c5d.css",
+    "static/js/main.37908938.js"
   ]
 }
