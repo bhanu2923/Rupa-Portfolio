@@ -563,6 +563,11 @@ function App() {
                 </a>
               </div>
             </div>
+            <div className="copyright-section">
+              <p className="copyright-text">
+                © {new Date().getFullYear()} Banavathi Rupa Bai. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </section>
