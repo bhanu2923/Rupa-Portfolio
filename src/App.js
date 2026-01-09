@@ -1,13 +1,26 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import profileImage from "./assets/rupa.jpeg";
 import eventImage from "./assets/event.png";
 import lumiereImage from "./assets/lumiere.png";
 import machineImage from "./assets/machine.png";
 import slimImage from "./assets/slim.png";
+import resumePDF from "./assets/Rupa_resume.pdf";
 
 function App() {
   const sectionRefs = useRef([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const observerOptions = {
@@ -46,15 +59,27 @@ function App() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <a href="#home" className="logo-link">
+            <a href="#home" className="logo-link" onClick={() => setIsMenuOpen(false)}>
               <span className="logo-text">Banavathi Rupa Bai</span>
             </a>
           </div>
-          <ul className="nav-menu">
-            <li><a href="#home" className="nav-link">Home</a></li>
-            <li><a href="#about" className="nav-link">About</a></li>
-            <li><a href="#projects" className="nav-link">Projects</a></li>
-            <li><a href="#contacts" className="nav-link">Contact</a></li>
+          <button
+            className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+            <li><a href="#home" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+            <li><a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</a></li>
+            <li><a href="#projects" className="nav-link" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
+            <li><a href="#contacts" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+            <li className="nav-menu-button">
+              <a href="#contacts" className="nav-button" onClick={() => setIsMenuOpen(false)}>Let's Talk</a>
+            </li>
           </ul>
           <div className="nav-cta">
             <a href="#contacts" className="nav-button">Let's Talk</a>
@@ -83,7 +108,13 @@ function App() {
               <span className="name-letter" style={{ animationDelay: '0.7s' }}>R</span>
               <span className="name-letter" style={{ animationDelay: '0.8s' }}>u</span>
               <span className="name-letter" style={{ animationDelay: '0.9s' }}>p</span>
-              <span className="name-letter" style={{ animationDelay: '1.0s' }}>a</span>
+              <span className="name-letter" style={{ animationDelay: '1.0s' }}>a</span>&nbsp;
+              <span className="name-letter" style={{ animationDelay: '0.7s' }}>B</span>
+              <span className="name-letter" style={{ animationDelay: '0.8s' }}>h</span>
+              <span className="name-letter" style={{ animationDelay: '0.9s' }}>a</span>
+              <span className="name-letter" style={{ animationDelay: '1.0s' }}>n</span>
+              <span className="name-letter" style={{ animationDelay: '1.0s' }}>u</span>
+
             </h2>
             <div className="hero-title-wrapper">
               <h3 className="hero-title">
@@ -92,8 +123,7 @@ function App() {
               </h3>
             </div>
             <p className="hero-description">
-              I create beautiful, functional, and user-centered digital experiences.
-              Passionate about building scalable web applications with modern technologies.
+              I build thoughtfully designed, user-centered digital experiences and develop scalable, maintainable web applications using modern web technologies.
             </p>
             <div className="hero-buttons">
               <a href="#contacts" className="btn btn-primary">
@@ -105,20 +135,12 @@ function App() {
               <a href="#projects" className="btn btn-secondary">
                 <span>View My Work</span>
               </a>
-            </div>
-            <div className="hero-stats">
-              <div className="stat-item">
-                <div className="stat-number">4+</div>
-                <div className="stat-label">Projects</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">100%</div>
-                <div className="stat-label">Satisfaction</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">24/7</div>
-                <div className="stat-label">Support</div>
-              </div>
+              <a href={resumePDF} target="_blank" rel="noopener noreferrer" className="btn btn-resume">
+                <span>View My Resume</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M5 15V17.5H15V15M10 3.75V13.75M7.5 10.625L10 13.125L12.5 10.625" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
             </div>
           </div>
           <div className="hero-right">
@@ -133,6 +155,20 @@ function App() {
                 <div className="image-glow"></div>
                 <img src={profileImage} alt="Rupa - Full Stack Developer" className="hero-image" />
                 <div className="image-border"></div>
+              </div>
+            </div>
+            <div className="hero-stats">
+              <div className="stat-item">
+                <div className="stat-number">Artist</div>
+                <div className="stat-label">Creative Passion</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">Travel</div>
+                <div className="stat-label">Explorer</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">Music</div>
+                <div className="stat-label">Enthusiast</div>
               </div>
             </div>
           </div>
@@ -166,7 +202,7 @@ function App() {
                 <p className="about-intro">
                   I'm a passionate <span className="highlight-text">Full Stack Developer</span> who transforms ideas into
                   beautiful, functional digital experiences. My journey in software development started from a love of
-                  photography, where I discovered my passion for creating from scratch.
+                  Art, where I discovered my passion for creating from scratch.
                 </p>
                 <p className="about-description">
                   With expertise in modern web technologies, I specialize in building scalable applications that

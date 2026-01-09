@@ -4,3 +4,11 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
+
+// If you add React Router later, update to:
+// import { BrowserRouter } from "react-router-dom";
+// root.render(
+//   <BrowserRouter basename="/Rupa-Portfolio">
+//     <App />
+//   </BrowserRouter>
+// );
